@@ -7,6 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Love messages data
     const messages = [
+        { message: "ولا اي كلمه حب اتقالت في يوم بين اثنين تسوي حلاوة كلمه منك قولتهالي.", author: "" },
+        { message: "واقفة دايماً جنب مني شجعتني صدقتني , سندتني ماوقعتش في يوم,  فيها قوة بتبني فيا والنجاح بسببها هي, كله كوم وحبيبتي كوم.", author: "" },
+        { message: "انت اول كل حاجة والبداية في كل شيء.", author: "" },
+        { message: "انا بوعدك من الليلة دي هفضل معاك , وهعمل اللى يريحك وهخاف عليك.", author: "" },
+        { message: "يوم ما اتقابلنا اليوم ده هفضل مش ناسيه, انا انكتبلي احلى قصة حب فيه.", author: "" },
+        { message: "اول مشاعر حلوة قلبي يحسها, ولهفتي لمعاد اقابلك بعدها.", author: "" },
+        { message: "انا معاك برتاح بنسى كل اللي عدا وراح والقى جنبك حياتي براح والقى روحي هنا.", author: "" },
+        { message: "انا معاك برتاح يالي خليتني احب واعيش دنيا اجمل منها مفيش غير حبيبي انا.", author: "" },
+        { message: "كل ماعيونك تاخدني يتولد احساس جديد.", author: "" },
+        { message: "وماله لو ليله توهنا بعيد وسيبنا كل الناس.", author: "" },
+        { message: "خليك معايه ياحبيبي مهما كان.", author: "" },
         { message: "I’ll be your soldier, fighting every second of the day for your dreams.", author: "" },
         { message: "If I had to dream up the perfect woman, she wouldn’t even come close to you.", author: "" },
         { message: "Like stars in the night sky, my love for you is infinite.", author: "" },
@@ -18,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { message: "She walks in beauty, like the night.", author: "" },
         { message: "To me, you are perfect.", author: "" },
         { message: "You are the best thing that’s ever been mine.", author: "" },
-        { message: "I just wanna hold you close, feel your heart so close to mine.", author: "" },
+        { message: "هو ده اللي حلمت بيه ضحكته نظرة عينيه.", author: "" },
         { message: "In this endless universe, you're my constant star.", author: "" }
     ];
 
@@ -91,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log("Initialization complete");
 
     function updateLoveCounter() {
-        const startDate = new Date("2023-07-23T00:00:00");
+        const startDate = new Date("2026-02-1T00:00:00");
         const now = new Date();
     
         let totalSeconds = Math.floor((now - startDate) / 1000);
@@ -120,3 +131,4 @@ document.addEventListener('DOMContentLoaded', function() {
       updateLoveCounter();
       setInterval(updateLoveCounter, 1000);
 });
+
