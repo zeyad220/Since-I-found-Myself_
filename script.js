@@ -101,29 +101,30 @@ document.addEventListener('DOMContentLoaded', function() {
     createStars();
     console.log("Initialization complete");
 
-    function updateLoveCounter() {
-    // 1 February 2026 at 00:00:00
-    const startDate = new Date(2026, 1, 1, 0, 0, 0); 
-    // ملاحظة: الشهور في JavaScript بتبدأ من 0
-    // يعني 0 = يناير، 1 = فبراير ✅
+  function updateLoveCounter() {
 
+    // فبراير = 1 لأن الشهور بتبدأ من 0
+    const startDate = new Date(2026, 1, 1, 0, 0, 0);
     const now = new Date();
 
-    let totalSeconds = Math.floor((now - startDate) / 1000);
+    const diff = now.getTime() - startDate.getTime();
 
-    if (totalSeconds < 0) {
-        document.getElementById("counter").textContent = "Our love story hasn't started yet ❤️";
+    if (diff < 0) {
+        document.getElementById("counter").textContent =
+            "Our love story hasn't started yet ❤️";
         return;
     }
 
-    const years = Math.floor(totalSeconds / (365 * 24 * 3600));
-    totalSeconds %= 365 * 24 * 3600;
+    let totalSeconds = Math.floor(diff / 1000);
 
-    const months = Math.floor(totalSeconds / (30 * 24 * 3600));
-    totalSeconds %= 30 * 24 * 3600;
+    const years = Math.floor(totalSeconds / (365 * 24 * 60 * 60));
+    totalSeconds %= (365 * 24 * 60 * 60);
 
-    const days = Math.floor(totalSeconds / (24 * 3600));
-    totalSeconds %= 24 * 3600;
+    const months = Math.floor(totalSeconds / (30 * 24 * 60 * 60));
+    totalSeconds %= (30 * 24 * 60 * 60);
+
+    const days = Math.floor(totalSeconds / (24 * 60 * 60));
+    totalSeconds %= (24 * 60 * 60);
 
     const hours = Math.floor(totalSeconds / 3600);
     totalSeconds %= 3600;
@@ -131,14 +132,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
 
-    const counterText = 
-        `${years}y ${months}m ${days}d ${hours}h ${minutes}min ${seconds}s`;
-
-    document.getElementById("counter").textContent = counterText;
+    document.getElementById("counter").textContent =
+        `${years}Y ${months}M ${days}D ${hours}H ${minutes}M ${seconds}S`;
 }
 
-// Start counter immediately and update every second
 updateLoveCounter();
 setInterval(updateLoveCounter, 1000);
-
+    });
 
